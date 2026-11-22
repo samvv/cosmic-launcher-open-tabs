@@ -16,8 +16,10 @@ On Arch Linux, from the AUR:
 paru -S cosmic-launcher-open-tabs-git
 ```
 
-On Pop!_OS, Ubuntu or Debian, build a `.deb` (needs Rust and
-`cargo install cargo-deb`) and install it:
+On Pop!_OS, Ubuntu or Debian, download the `.deb` from the
+[latest release](https://github.com/samvv/cosmic-launcher-open-tabs/releases/latest)
+and install it with `sudo apt install ./cosmic-launcher-open-tabs_*.deb`. Or
+build it yourself (needs Rust and `cargo install cargo-deb`):
 
 ```sh
 deb/build.sh

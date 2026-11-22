@@ -1,18 +1,18 @@
-# Build the Debian package and attach it to a GitHub release when a version
+# Build the Debian packages and attach them to a GitHub release when a version
 # tag like v0.1.0 is pushed. Built on the oldest supported Ubuntu so the
-# binary also runs on newer releases.
+# binaries also run on newer releases.
 name: Release
 
 on:
   push:
     tags: ["v*"]
 
-permissions:
-  contents: write
-
 jobs:
   deb:
-    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        runner: [ubuntu-22.04, ubuntu-22.04-arm]
+    runs-on: ${{ matrix.runner }}
     steps:
       - uses: actions/checkout@v4
 
@@ -38,6 +38,24 @@ jobs:
       - name: Build .deb
         run: deb/build.sh
 
+      - uses: actions/upload-artifact@v4
+        with:
+          name: deb-${{ matrix.runner }}
+          path: plugin/target/debian/*.deb
+          if-no-files-found: error
+
+  release:
+    needs: deb
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: deb-*
+          path: dist
+          merge-multiple: true
+
       - name: Upload to release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -45,4 +63,4 @@ jobs:
         run: |
           gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1 \
             || gh release create "$GITHUB_REF_NAME" --title "$GITHUB_REF_NAME" --generate-notes
-          gh release upload "$GITHUB_REF_NAME" plugin/target/debian/*.deb --clobber
+          gh release upload "$GITHUB_REF_NAME" dist/*.deb --clobber

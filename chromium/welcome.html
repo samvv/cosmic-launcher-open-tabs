@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browser Tabs for COSMIC Launcher</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/icon128.png" alt="" width="64" height="64">
+      <h1>Browser Tabs for COSMIC Launcher</h1>
+    </header>
+
+    <p>
+      Search your open tabs from COSMIC Launcher by typing <kbd>tab</kbd> followed
+      by a space, then pick one to switch to it.
+    </p>
+
+    <section id="status" class="status" data-state="connecting" aria-live="polite">
+      <strong id="status-title">Checking for the launcher plugin…</strong>
+      <p id="status-detail"></p>
+    </section>
+
+    <section id="setup">
+      <h2>Setup</h2>
+      <p>
+        This extension needs the companion launcher plugin, a small program that
+        runs on your computer. The plugin is what COSMIC Launcher talks to, and the
+        browser hands it your tabs. Nothing is sent over the network.
+      </p>
+      <ol>
+        <li>Install the <code>browser-tabs</code> launcher plugin. From the project's
+          source, run <code>plugin/install.sh</code>. This also registers it with
+          your browser.</li>
+        <li>Click <b>Check again</b> below.</li>
+        <li>Open COSMIC Launcher and type <kbd>tab</kbd> followed by a space.</li>
+      </ol>
+      <p class="note">
+        Flatpak and Snap builds of the browser can't start the plugin. Use a
+        browser installed from your distribution's packages.
+      </p>
+    </section>
+
+    <button id="retry" type="button">Check again</button>
+  </main>
+  <script src="welcome.js"></script>
+</body>
+</html>

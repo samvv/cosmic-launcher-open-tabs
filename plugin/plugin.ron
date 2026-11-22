@@ -1,0 +1,10 @@
+(
+    name: "Browser Tabs",
+    description: "Search and switch to open browser tabs\nPrefix with \"tab \" to show only tabs\nExample: tab github",
+    query: (
+        help: "tab ",
+        isolate_with: "^(tab )",
+    ),
+    bin: (path: "browser-tabs"),
+    icon: Name("web-browser"),
+)

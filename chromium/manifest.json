@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Tabs for COSMIC Launcher",
+  "version": "0.1.0",
+  "description": "Search and switch to your open tabs from COSMIC Launcher. Requires the companion launcher plugin.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqxo6fGKBmVpm4r+BwL3aQSwK45uejlhaYwPSlY+Nt9rGjNnOX/2PqNl5yU+/OSNgz16xqKQKvpjhyJufKysZfACk0mQ9vElR9vkad7qB13KGOr+aWSqul7YmVNy/5Gh0QGOcOaxtADXR4E51fKJ/OoIGMSrh9fNG13pZqRYHw5kdpbcYNVROeiZf9h5duIFl35lPLMxu1N5HvFnBCTZBpVFpI5+oRbYYTAwgEpTM+SHXazzq7CZ/fIK+T+fMwY5c5eLNnNHM76sVVgOC6F03tv3l7jlAiS/Jz63FhFH7Q5RcubU9XqlM0/V4WsGbCwzVQEgXYhNBOiP8+axIOOuHOQIDAQAB",
+  "permissions": [
+    "tabs",
+    "nativeMessaging",
+    "favicon"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "minimum_chrome_version": "105",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "welcome.html",
+    "open_in_tab": true
+  }
+}

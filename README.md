@@ -29,6 +29,12 @@ and select the `chromium/` folder.
 
 Then restart the launcher service with `pkill pop-launcher`.
 
+## Uninstall
+
+Run `plugin/uninstall.sh` (or `paru -R cosmic-launcher-open-tabs-git` for the
+AUR package), remove the extension from `chrome://extensions`, then run
+`pkill pop-launcher`.
+
 ## Usage
 
 Type part of a tab's title or address in COSMIC Launcher and pick a result to

@@ -2,6 +2,9 @@
 name = "browser-tabs"
 version = "0.1.0"
 edition = "2024"
+description = "Search and switch to open browser tabs from COSMIC Launcher"
+license = "MPL-2.0"
+repository = "https://github.com/samvv/cosmic-launcher-open-tabs"
 
 [dependencies]
 base64 = "0.23.1"

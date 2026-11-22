@@ -1,0 +1,19 @@
+pkgbase = cosmic-launcher-open-tabs-git
+	pkgdesc = Search and switch to open browser tabs from COSMIC Launcher (needs the companion Chromium extension)
+	pkgver = r1.e163b29
+	pkgrel = 1
+	url = https://github.com/samvv/cosmic-launcher-open-tabs
+	arch = x86_64
+	arch = aarch64
+	license = MPL-2.0
+	makedepends = cargo
+	makedepends = git
+	depends = gcc-libs
+	depends = glibc
+	depends = pop-launcher
+	provides = cosmic-launcher-open-tabs
+	conflicts = cosmic-launcher-open-tabs
+	source = git+https://github.com/samvv/cosmic-launcher-open-tabs.git
+	sha256sums = SKIP
+
+pkgname = cosmic-launcher-open-tabs-git

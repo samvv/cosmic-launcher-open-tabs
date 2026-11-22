@@ -16,6 +16,14 @@ On Arch Linux, from the AUR:
 paru -S cosmic-launcher-open-tabs-git
 ```
 
+On Pop!_OS, Ubuntu or Debian, build a `.deb` (needs Rust and
+`cargo install cargo-deb`) and install it:
+
+```sh
+deb/build.sh
+sudo apt install ./plugin/target/debian/cosmic-launcher-open-tabs_*.deb
+```
+
 From source (needs Rust), for the current user:
 
 ```sh
@@ -32,7 +40,7 @@ Then restart the launcher service with `pkill pop-launcher`.
 ## Uninstall
 
 Run `plugin/uninstall.sh` (or `paru -R cosmic-launcher-open-tabs-git` for the
-AUR package), remove the extension from `chrome://extensions`, then run
+AUR package, `sudo apt remove cosmic-launcher-open-tabs` for the `.deb`), remove the extension from `chrome://extensions`, then run
 `pkill pop-launcher`.
 
 ## Usage
@@ -43,7 +51,8 @@ switch to that tab. Prefix your search with `tab ` to show only tabs.
 ## Limitations
 
 - Flatpak and Snap builds of the browser can't talk to the plugin.
-- The AUR package registers the plugin with Chromium, Chrome and Edge. For
+- The AUR and Debian packages register the plugin with Chromium, Chrome and
+  Edge. For
   other browsers, run `plugin/install.sh`.
 
 ## License

@@ -9,7 +9,7 @@ if [ -d "$dest" ]; then
     echo "Removed plugin from $dest"
 fi
 
-host_name="cosmic_launcher.browser_tabs"
+host_name="be.samvervaeck.cosmic_launcher_open_tabs"
 config="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 for browser in chromium google-chrome google-chrome-beta google-chrome-unstable \

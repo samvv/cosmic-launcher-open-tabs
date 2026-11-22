@@ -51,7 +51,7 @@ package() {
   for dir in "${_hostdirs[@]}"; do
     install -d "$pkgdir/$dir"
     sh plugin/native-host-manifest.sh "$_plugindir/browser-tabs" \
-      > "$pkgdir/$dir/cosmic_launcher.browser_tabs.json"
+      > "$pkgdir/$dir/be.samvervaeck.cosmic_launcher_open_tabs.json"
   done
 
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"

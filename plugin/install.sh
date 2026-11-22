@@ -11,7 +11,7 @@ install -m 644 plugin.ron "$dest/plugin.ron"
 install -m 755 target/release/browser-tabs "$dest/browser-tabs"
 echo "Installed plugin to $dest"
 
-host_name="cosmic_launcher.browser_tabs"
+host_name="be.samvervaeck.cosmic_launcher_open_tabs"
 config="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 for browser in chromium google-chrome google-chrome-beta google-chrome-unstable \

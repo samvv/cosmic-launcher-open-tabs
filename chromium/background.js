@@ -7,7 +7,7 @@
 //
 // An open native messaging port also keeps this service worker alive.
 
-const HOST_NAME = "cosmic_launcher.browser_tabs";
+const HOST_NAME = "be.samvervaeck.cosmic_launcher_open_tabs";
 const PUSH_DELAY_MS = 100;
 const MAX_RETRY_MS = 60_000;
 const SETTLE_TIMEOUT_MS = 3_000;

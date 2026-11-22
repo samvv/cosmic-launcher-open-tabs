@@ -11,7 +11,7 @@ extension_ids="hkhjldjlbnpjjohigakmhnppinkbaaad"
 origins=$(printf '"chrome-extension://%s/", ' $extension_ids)
 cat <<JSON
 {
-  "name": "cosmic_launcher.browser_tabs",
+  "name": "be.samvervaeck.cosmic_launcher_open_tabs",
   "description": "Browser Tabs for COSMIC Launcher",
   "path": "$1",
   "type": "stdio",

@@ -1,2 +1,7 @@
 /plugin/target/
 /chromium/dist/
+# makepkg output in aur/
+/aur/*.pkg.tar.*
+/aur/src/
+/aur/pkg/
+/aur/cosmic-launcher-open-tabs/
